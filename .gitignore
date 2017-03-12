@@ -1,0 +1,25 @@
+## creditcard ##
+*.log
+
+## Python ##
+*.pyc
+env
+env2
+env3
+dist
+
+## JetBrains ##
+.idea
+
+## Windows ##
+Thumbds.db
+Desktop.ini
+*.lnk
+
+## macOS ##
+.DS_Store
+
+## Linux ##
+._*
+.directory
+
