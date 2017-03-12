@@ -103,7 +103,7 @@ class CreditCard(object):
         self._number = str(int(number)).strip()
         self._expire_month = str(int(expire_month)).strip() if expire_month else None
         self._expire_year = str(int(expire_year)).strip() if expire_year else None
-        self._expire_year = str(int(math.floor(datetime.now().year / 100)))+self._expire_year if len(expire_year) == 2 else self._expire_year
+        self._expire_year = str(int(math.floor(datetime.now().year / 100)))+self._expire_year if expire_year and len(expire_year) == 2 else self._expire_year
         self._code = str(int(code)).strip() if code else None
         self._cardholder = str(cardholder).strip() if cardholder else None
 

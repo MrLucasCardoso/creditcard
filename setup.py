@@ -9,7 +9,7 @@ from setuptools import setup
 setup(
     name='creditcard',
     description='A simple class for representing, validating, and formatting credit card information',
-    version='0.9.0',
+    version='0.9.1',
     author='Alex Forster',
     author_email='alex@alexforster.com',
     maintainer='Alex Forster',
