@@ -1,15 +1,17 @@
 ## creditcard ##
+test.py
 *.log
 
 ## Python ##
 *.pyc
-env
-env2
-env3
-dist
+env/
+env2/
+env3/
+dist/
+*.egg-info/
 
 ## JetBrains ##
-.idea
+.idea/
 
 ## Windows ##
 Thumbds.db
