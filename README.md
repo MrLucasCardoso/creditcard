@@ -5,11 +5,11 @@ A simple class for identifying, validating, and formatting credit card informati
 ```python
 from creditcard import CreditCard
 
-card = CreditCard('375371850275506',
-                  expire_month='03',
+card = CreditCard(number='375371850275506',
+                  cardholder='Charles Smith',
+                  expire_month='3',
                   expire_year='2017',
-                  code=2887,
-                  cardholder='Charles Smith')
+                  code=2887)
 
 if card.is_valid:
 
@@ -22,7 +22,6 @@ if card.is_valid:
           .format(card.code_name, card.code))
     if card.is_expired:
         print('EXPIRED')      # EXPIRED
-
 ```
 
 ### Supported Card Families
@@ -35,4 +34,4 @@ if card.is_valid:
  * Discover
  * Diners Club
  * UnionPay (China)
- * JCB (Japan Credit Beauro)
+ * JCB (Japan Credit Bureau)
