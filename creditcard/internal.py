@@ -179,9 +179,16 @@ class CreditCard(object):
 
         if not self._expire_month or not self._expire_year: return None
 
-        dt = datetime(int(self._expire_year), int(self._expire_month), 1)
+        return datetime(int(self._expire_year), int(self._expire_month), 1).date()
 
-        return '/'.join([str(dt.month), str(dt.year)])
+    @property
+    def expires_string(self):
+
+        expires = self.expires
+
+        if not expires: return None
+
+        return '{:02d}/{:02d}'.format(expires.month, expires.year - 2000)
 
     @property
     def is_expired(self):
@@ -189,7 +196,7 @@ class CreditCard(object):
         if not self._expire_month or not self._expire_year: return None
 
         now = datetime.now().date()
-        expires = datetime(int(self._expire_year), int(self._expire_month), 1)
+        expires = datetime(int(self._expire_year), int(self._expire_month), 1).date()
 
         return now >= expires
 

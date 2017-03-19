@@ -42,7 +42,7 @@
           code.length="3"
           luhn="true" />
 
-    <card brand="China Union Pay"
+    <card brand="UnionPay"
           prefix="62,88"
           length="16,19"
           mask="4,4,4,4"
@@ -50,7 +50,7 @@
           code.length="3"
           luhn="false" />
 
-    <card brand="Japan Credit Bureau"
+    <card brand="JCB"
           prefix="1800,2131,35"
           length="16"
           mask="4,4,4,4"

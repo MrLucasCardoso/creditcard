@@ -1,15 +1,13 @@
 # coding: UTF-8
 # Copyright © 2017 Alex Forster. All rights reserved.
 
-import sys
-
 from setuptools import setup
 
 
 setup(
     name='creditcard',
-    description='A simple class for representing, validating, and formatting credit card information',
-    version='0.9.1',
+    description='A simple class for identifying, validating, and formatting credit card information',
+    version='1.0.1',
     author='Alex Forster',
     author_email='alex@alexforster.com',
     maintainer='Alex Forster',
