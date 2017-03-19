@@ -6,8 +6,8 @@ from setuptools import setup
 
 setup(
     name='creditcard',
-    description='A simple class for identifying, validating, and formatting credit card information',
-    version='1.0.1',
+    description='A simple class for identifying, validating, and formatting credit card information (see git.io/vydSB)',
+    version='1.0.2',
     author='Alex Forster',
     author_email='alex@alexforster.com',
     maintainer='Alex Forster',

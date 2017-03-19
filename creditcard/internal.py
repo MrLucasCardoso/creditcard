@@ -1,8 +1,6 @@
 # coding: UTF-8
 # Copyright © 2017 Alex Forster. All rights reserved.
 
-import os
-import sys
 import math
 import pkg_resources
 
@@ -103,7 +101,10 @@ class CreditCard(object):
         self._number = str(int(number)).strip()
         self._expire_month = str(int(expire_month)).strip() if expire_month else None
         self._expire_year = str(int(expire_year)).strip() if expire_year else None
-        self._expire_year = str(int(math.floor(datetime.now().year / 100)))+self._expire_year if expire_year and len(expire_year) == 2 else self._expire_year
+        self._expire_year = \
+            str(int(math.floor(datetime.now().year/100)))+self._expire_year if expire_year and len(expire_year) == 2 \
+            else self._expire_year if expire_year and len(expire_year) == 4 \
+            else None
         self._code = str(int(code)).strip() if code else None
         self._cardholder = str(cardholder).strip() if cardholder else None
 
@@ -185,7 +186,6 @@ class CreditCard(object):
     def expires_string(self):
 
         expires = self.expires
-
         if not expires: return None
 
         return '{:02d}/{:02d}'.format(expires.month, expires.year - 2000)
@@ -193,12 +193,10 @@ class CreditCard(object):
     @property
     def is_expired(self):
 
-        if not self._expire_month or not self._expire_year: return None
+        expires = self.expires
+        if not expires: return None
 
-        now = datetime.now().date()
-        expires = datetime(int(self._expire_year), int(self._expire_month), 1).date()
-
-        return now >= expires
+        return datetime.now().date() >= expires
 
     @property
     def code_name(self):
